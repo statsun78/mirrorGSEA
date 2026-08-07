@@ -33,7 +33,7 @@ Generates pseudo gene expression data with an AR(1) correlation structure descri
 
 * `n`: The sample size.
 * `p`: The total number of genes.
-* `path.size`: The pathway size. Options are `10`, `50`, `100`, or `NULL`, which correspond to small, moderate, large, and mixed pathways, respectively. For mixed pathways, 10, 50, and 100 size pathways are generated. Please see the manuscript for details.
+* `path.size`: The pathway size. Options are `10`, `50`, `100`, or `NULL`, which correspond to small, moderate, large, and mixed pathways, respectively. For mixed pathways, pathways of sizes 10, 50, and 100 are generated. Please see the manuscript for details.
 * `global.seed`: A seed number to generate random values.
 * `cov.rho`: The correlation value used for the AR(1) covariance matrix.
 
@@ -47,3 +47,29 @@ Generates pseudo gene expression data with an AR(1) correlation structure descri
 ---
 
 ## Example
+
+```r
+# 1. Initialize parameters  
+n <- 100
+p <- 1000
+size <- 50
+rho <- 0.5
+
+# 2. Simulate gene expression data
+data <- sim.fun(n, p, path.size = size, global.seed = 123, cov.rho = rho)
+x <- data$x
+y <- data$y
+
+# 3. Define pathways for GSEA
+pathways <- split(1:p, rep(1:(p/size), each = size))
+names(pathways) <- paste0("Pathway_", size, "_", 1:(p/size))
+
+# 4. Perform GSEA using mirror statistics
+g <- mirror_gsea(x, y, pathways)
+head(g[order(g$pval), ])
+```
+
+---
+
+## Reference
+Kim, Y. and Sun, H. (2026) Mirror statistics-based gene set enrichment analysis for correlated gene expression data, *submitted*.
