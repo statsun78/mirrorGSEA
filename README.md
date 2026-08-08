@@ -1,6 +1,6 @@
 # mirrorGSEA
 
-An R package/script for Gene Set Enrichment Analysis (GSEA) using mirror statistics.
+An R function/script for Gene Set Enrichment Analysis (GSEA) using mirror statistics.
 
 Please download `function.R` to compute mirror statistics from gene expression data.
 
