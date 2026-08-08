@@ -22,7 +22,7 @@ Performs Gene Set Enrichment Analysis (GSEA) after computing the mirror statisti
   * `"ridge"`: Ridge regression
   * `"lasso"`: Lasso regression
   * `"elastic"`: Elastic-net regression
-* `mirror.type` (*integer*, default: `1`): Choice among three different symmetric functions to compute mirror statistics. See the manuscript for details.
+* `mirror.type` (*integer*, default: `"1"`): Choice among three different symmetric functions to compute mirror statistics. See the manuscript for details. Options : `"1"`, `"2"` or `"3"`.
 * `alpha` (*numeric*): The elastic-net mixing parameter ($0 \le \alpha \le 1$). Automatically set to `0` for `"ridge"` and `1` for `"lasso"`.
 * `num.split` (*integer*, default: `100`): The total number of resamplings to compute mirror statistics.
 
