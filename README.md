@@ -84,7 +84,7 @@ head(g[order(g$pval), ])
 
 ## Data availability
 
-The processed dataset used in the manuscript is available as a release asset (`TCGA.rda`).
+The processed TCGA dataset used in the manuscript is available as a release asset (`TCGA.rda`).
 
 ---
 
