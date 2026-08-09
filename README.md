@@ -82,5 +82,11 @@ head(g[order(g$pval), ])
 
 ---
 
+## Data availability
+
+The processed dataset used in the manuscript is available as a release asset (TCGA.rda).
+
+---
+
 ## Reference
 Kim, Y. and Sun, H. (2026) Mirror statistics-based gene set enrichment analysis for correlated gene expression data, *submitted*.
